@@ -2,6 +2,8 @@ import { nanoid } from "nanoid";
 import { GlobalStyle } from "./GlobalStyle";
 import { Layout } from "./Layout";
 import { useState } from "react";
+import TodoList from "./components/TodoList";
+import InputFiled from "./components/InputFiled";
 
 function App() {
   const [todos, setTodos] = useState([]);
@@ -20,22 +22,32 @@ function App() {
     }
   };
 
+  const romoveTodo = (todoId) => {
+    setTodos(todos.filter((todo) => todo.id !== todoId));
+  };
+
+  const toggleTodoCopmpleted = (todoId) => {
+    setTodos(
+      todos.map((todo) => {
+        if (todo.id !== todoId) return todo;
+
+        return {
+          ...todo,
+          completed: !todo.completed,
+        };
+      })
+    );
+  };
+
   return (
     <Layout>
       <GlobalStyle />
-      <label>
-        <input value={text} onChange={(e) => setText(e.target.value)} />
-        <button onClick={addTodo}>Add todo</button>
-      </label>
-      <ul>
-        {todos.map((todo) => (
-          <li key={todo.id}>
-            <input type="checkbox" />
-            <p>{todo.text}</p>
-            <span>&times;</span>
-          </li>
-        ))}
-      </ul>
+      <InputFiled handlerInput={setText} handleSubmit={addTodo} text={text} />
+      <TodoList
+        todos={todos}
+        toggleTodoCopmpleted={toggleTodoCopmpleted}
+        romoveTodo={romoveTodo}
+      />
     </Layout>
   );
 }
