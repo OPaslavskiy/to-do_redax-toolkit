@@ -5,6 +5,7 @@ import TodoList from "./components/TodoList";
 import InputFiled from "./components/InputFiled";
 import { useDispatch } from "react-redux";
 import { addTodo } from "./store/todoSlice";
+import "./App.css";
 
 function App() {
   const [text, setText] = useState("");
