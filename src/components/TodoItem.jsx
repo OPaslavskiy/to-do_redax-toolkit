@@ -1,5 +1,3 @@
-/* eslint-disable react/prop-types */
-
 function TodoItem({ id, completed, text, toggleTodoCompleted, romoveTodo }) {
   return (
     <li>

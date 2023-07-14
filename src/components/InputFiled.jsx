@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 function InputFiled({ handlerInput, handleSubmit, text }) {
   return (
     <label>

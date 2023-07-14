@@ -1,14 +1,12 @@
-/* eslint-disable react/prop-types */
-
 import TodoItem from "./TodoItem";
 
-function TodoList({ todos, toggleTodoCompleted, romoveTodo }) {
+function TodoList({ todos, toggleTodoCopmpleted, romoveTodo }) {
   return (
     <ul>
       {todos?.map((todo) => (
         <TodoItem
           key={todo.id}
-          toggleTodoCompleted={toggleTodoCompleted}
+          toggleTodoCopmpleted={toggleTodoCopmpleted}
           romoveTodo={romoveTodo}
           {...todo}
         />
