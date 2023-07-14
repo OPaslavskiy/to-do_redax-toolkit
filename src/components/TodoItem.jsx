@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { toggleTodoCompleted, romoveTodo } from "../store/todoSlice";
+import { toggleTodoCompleted, removeTodo } from "../store/todoSlice";
 
 // eslint-disable-next-line react/prop-types
 function TodoItem({ id, completed, text }) {
@@ -9,10 +9,10 @@ function TodoItem({ id, completed, text }) {
       <input
         type="checkbox"
         checked={completed}
-        onChange={() => dispatch(toggleTodoCompleted(id))}
+        onChange={() => dispatch(toggleTodoCompleted({ id }))}
       />
       <p>{text}</p>
-      <span onClick={() => dispatch(romoveTodo(id))}>&times;</span>
+      <span onClick={() => dispatch(removeTodo({ id }))}>&times;</span>
     </li>
   );
 }

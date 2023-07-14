@@ -17,22 +17,6 @@ function App() {
     }
   };
 
-  const romoveTodo = (todoId) => {
-    // setTodos(todos.filter((todo) => todo.id !== todoId));
-  };
-
-  const toggleTodoCompleted = (todoId) => {
-    // setTodos(
-    //   todos.map((todo) => {
-    //     if (todo.id !== todoId) return todo;
-    //     return {
-    //       ...todo,
-    //       completed: !todo.completed,
-    //     };
-    //   })
-    // );
-  };
-
   return (
     <Layout>
       <GlobalStyle />

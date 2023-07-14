@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import { nanoid } from "nanoid";
 
 const todoSlice = createSlice({
-  name: "todo",
+  name: "todos",
   initialState: { todos: [] },
   reducers: {
     addTodo(state, action) {
@@ -12,10 +12,17 @@ const todoSlice = createSlice({
         completed: false,
       });
     },
-    romoveTodo(state, action) {},
-    toggleTodoCompleted(state, action) {},
+    removeTodo(state, action) {
+      state.todos = state.todos.filter((todo) => todo.id !== action.payload.id);
+    },
+    toggleTodoCompleted(state, action) {
+      const toggledTodo = state.todos.find(
+        (todo) => todo.id === action.payload.id
+      );
+      toggledTodo.completed = !toggledTodo.completed;
+    },
   },
 });
 
-export const { addTodo, romoveTodo, toggleTodoCompleted } = todoSlice.actions;
+export const { addTodo, removeTodo, toggleTodoCompleted } = todoSlice.actions;
 export const todoReducer = todoSlice.reducer;
