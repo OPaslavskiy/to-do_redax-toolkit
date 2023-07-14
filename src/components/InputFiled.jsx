@@ -1,7 +1,8 @@
-function InputFiled({ handlerInput, handleSubmit, text }) {
+// eslint-disable-next-line react/prop-types
+function InputFiled({ handlerInput, handleSubmit, value }) {
   return (
     <label>
-      <input value={text} onChange={(e) => handlerInput(e.target.value)} />
+      <input value={value} onChange={(e) => handlerInput(e.target.value)} />
       <button onClick={handleSubmit}>Add todo</button>
     </label>
   );

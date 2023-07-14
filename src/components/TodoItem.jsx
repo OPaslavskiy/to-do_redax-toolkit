@@ -1,13 +1,18 @@
-function TodoItem({ id, completed, text, toggleTodoCompleted, romoveTodo }) {
+import { useDispatch } from "react-redux";
+import { toggleTodoCompleted, romoveTodo } from "../store/todoSlice";
+
+// eslint-disable-next-line react/prop-types
+function TodoItem({ id, completed, text }) {
+  const dispatch = useDispatch();
   return (
     <li>
       <input
         type="checkbox"
         checked={completed}
-        onChange={() => toggleTodoCompleted(id)}
+        onChange={() => dispatch(toggleTodoCompleted(id))}
       />
       <p>{text}</p>
-      <span onClick={() => romoveTodo(id)}>&times;</span>
+      <span onClick={() => dispatch(romoveTodo(id))}>&times;</span>
     </li>
   );
 }

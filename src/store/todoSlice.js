@@ -6,8 +6,6 @@ const todoSlice = createSlice({
   initialState: { todos: [] },
   reducers: {
     addTodo(state, action) {
-      console.log(state);
-      console.log(action);
       state.todos.push({
         id: nanoid(),
         text: action.payload.text,
