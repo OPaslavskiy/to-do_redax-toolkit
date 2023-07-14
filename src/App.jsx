@@ -1,11 +1,14 @@
 import { GlobalStyle } from "./GlobalStyle";
 import { Layout } from "./Layout";
+import "./App.css";
+
 import { useState } from "react";
-import TodoList from "./components/TodoList";
-import InputFiled from "./components/InputFiled";
+
 import { useDispatch } from "react-redux";
 import { addTodo } from "./store/todoSlice";
-import "./App.css";
+
+import TodoList from "./components/TodoList";
+import InputFiled from "./components/InputFiled";
 
 function App() {
   const [text, setText] = useState("");
