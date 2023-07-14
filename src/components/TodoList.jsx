@@ -2,13 +2,13 @@
 
 import TodoItem from "./TodoItem";
 
-function TodoList({ todos, toggleTodoCopmpleted, romoveTodo }) {
+function TodoList({ todos, toggleTodoCompleted, romoveTodo }) {
   return (
     <ul>
       {todos?.map((todo) => (
         <TodoItem
           key={todo.id}
-          toggleTodoCopmpleted={toggleTodoCopmpleted}
+          toggleTodoCompleted={toggleTodoCompleted}
           romoveTodo={romoveTodo}
           {...todo}
         />

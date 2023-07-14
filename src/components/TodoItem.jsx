@@ -1,12 +1,12 @@
 /* eslint-disable react/prop-types */
 
-function TodoItem({ id, completed, text, toggleTodoCopmpleted, romoveTodo }) {
+function TodoItem({ id, completed, text, toggleTodoCompleted, romoveTodo }) {
   return (
     <li>
       <input
         type="checkbox"
         checked={completed}
-        onChange={() => toggleTodoCopmpleted(id)}
+        onChange={() => toggleTodoCompleted(id)}
       />
       <p>{text}</p>
       <span onClick={() => romoveTodo(id)}>&times;</span>

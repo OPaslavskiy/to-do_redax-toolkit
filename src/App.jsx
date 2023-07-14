@@ -26,7 +26,7 @@ function App() {
     setTodos(todos.filter((todo) => todo.id !== todoId));
   };
 
-  const toggleTodoCopmpleted = (todoId) => {
+  const toggleTodoCompleted = (todoId) => {
     setTodos(
       todos.map((todo) => {
         if (todo.id !== todoId) return todo;
@@ -45,7 +45,7 @@ function App() {
       <InputFiled handlerInput={setText} handleSubmit={addTodo} text={text} />
       <TodoList
         todos={todos}
-        toggleTodoCopmpleted={toggleTodoCopmpleted}
+        toggleTodoCompleted={toggleTodoCompleted}
         romoveTodo={romoveTodo}
       />
     </Layout>
